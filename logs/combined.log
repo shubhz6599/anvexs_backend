@@ -248,3 +248,150 @@
 2026-06-04 07:27:54 [ERROR]: ❌ Email service verification failed:
 2026-06-04 07:27:54 [WARN]: ⚠️  Email service verification failed. Emails will not be sent in production. Check .env configuration.
 2026-06-04 07:27:54 [INFO]: 🚀 Anvexs API running on port 5000 [development]
+2026-06-04 07:29:13 [INFO]: ✅ MongoDB connected
+2026-06-04 07:29:13 [INFO]: ✅ Database connected successfully
+2026-06-04 07:29:13 [INFO]: 🚀 Anvexs API running on port 5000 [development]
+2026-06-04 07:29:55 [DEBUG]: [DECRYPT] POST /enquiries
+2026-06-04 07:30:08 [DEBUG]: [DECRYPT] POST /enquiries
+2026-06-04 07:30:08 [INFO]: [DEV MODE] Enquiry confirmation for shubhz6599@gmail.com
+2026-06-04 07:30:08 [INFO]: New enquiry created: shubhz6599@gmail.com - Service: web_development
+2026-06-04 07:42:51 [INFO]: ✅ MongoDB connected
+2026-06-04 07:42:51 [INFO]: ✅ Database connected successfully
+2026-06-04 07:42:51 [INFO]: 🚀 Anvexs API running on port 5000 [development]
+2026-06-04 07:43:28 [INFO]: ✅ MongoDB connected
+2026-06-04 07:43:28 [INFO]: ✅ Database connected successfully
+2026-06-04 07:43:28 [INFO]: 🚀 Anvexs API running on port 5000 [development]
+2026-06-04 07:44:05 [DEBUG]: [DECRYPT] POST /enquiries
+2026-06-04 07:44:05 [INFO]: [DEV MODE] Enquiry confirmation for shubhz6599@gmail.com
+2026-06-04 07:44:05 [INFO]: New enquiry created: shubhz6599@gmail.com - Service: web_development
+2026-06-04 07:44:44 [INFO]: ✅ MongoDB connected
+2026-06-04 07:44:44 [INFO]: ✅ Database connected successfully
+2026-06-04 07:44:44 [INFO]: 🚀 Anvexs API running on port 5000 [development]
+2026-06-04 17:59:31 [INFO]: ✅ MongoDB connected
+2026-06-04 17:59:31 [INFO]: ✅ Database connected successfully
+2026-06-04 17:59:31 [INFO]: 🚀 Anvexs API running on port 5000 [development]
+2026-06-04 18:00:25 [INFO]: ✅ MongoDB connected
+2026-06-04 18:00:25 [INFO]: ✅ Database connected successfully
+2026-06-04 18:00:25 [INFO]: 🚀 Anvexs API running on port 5000 [development]
+2026-06-04 18:43:00 [INFO]: ✅ MongoDB connected
+2026-06-04 18:43:00 [INFO]: ✅ Database connected successfully
+2026-06-04 18:43:00 [INFO]: 🚀 Anvexs API running on port 5000 [development]
+2026-06-04 18:45:47 [INFO]: ✅ MongoDB connected
+2026-06-04 18:45:47 [INFO]: ✅ Database connected successfully
+2026-06-04 18:45:48 [INFO]: 🚀 Anvexs API running on port 5000 [development]
+2026-06-04 18:47:48 [INFO]: ✅ MongoDB connected
+2026-06-04 18:47:48 [INFO]: ✅ Database connected successfully
+2026-06-04 18:47:48 [INFO]: 🚀 Anvexs API running on port 5000 [development]
+2026-06-04 18:52:15 [INFO]: ✅ MongoDB connected
+2026-06-04 18:52:15 [INFO]: ✅ Database connected successfully
+2026-06-04 18:52:15 [INFO]: 🚀 Anvexs API running on port 5000 [development]
+2026-06-04 18:52:51 [INFO]: ✅ MongoDB connected
+2026-06-04 18:52:51 [INFO]: ✅ Database connected successfully
+2026-06-04 18:52:51 [INFO]: 🚀 Anvexs API running on port 5000 [development]
+2026-06-04 18:53:00 [INFO]: ✅ MongoDB connected
+2026-06-04 18:53:00 [INFO]: ✅ Database connected successfully
+2026-06-04 18:53:00 [INFO]: 🚀 Anvexs API running on port 5000 [development]
+2026-06-04 18:53:38 [INFO]: ✅ MongoDB connected
+2026-06-04 18:53:38 [INFO]: ✅ Database connected successfully
+2026-06-04 18:53:38 [INFO]: 🚀 Anvexs API running on port 5000 [development]
+2026-06-04 18:54:02 [INFO]: ✅ MongoDB connected
+2026-06-04 18:54:02 [INFO]: ✅ Database connected successfully
+2026-06-04 18:54:02 [INFO]: 🚀 Anvexs API running on port 5000 [development]
+2026-06-04 18:55:15 [INFO]: ✅ MongoDB connected
+2026-06-04 18:55:15 [INFO]: ✅ Database connected successfully
+2026-06-04 18:55:15 [INFO]: 🚀 Anvexs API running on port 5000 [development]
+2026-06-04 18:55:45 [INFO]: ✅ MongoDB connected
+2026-06-04 18:55:45 [INFO]: ✅ Database connected successfully
+2026-06-04 18:55:45 [INFO]: 🚀 Anvexs API running on port 5000 [development]
+2026-06-04 18:56:14 [INFO]: ✅ MongoDB connected
+2026-06-04 18:56:14 [INFO]: ✅ Database connected successfully
+2026-06-04 18:56:14 [INFO]: 🚀 Anvexs API running on port 5000 [development]
+2026-06-04 18:57:21 [INFO]: ✅ MongoDB connected
+2026-06-04 18:57:21 [INFO]: ✅ Database connected successfully
+2026-06-04 18:57:21 [INFO]: 🚀 Anvexs API running on port 5000 [development]
+2026-06-04 18:57:36 [INFO]: ✅ MongoDB connected
+2026-06-04 18:57:36 [INFO]: ✅ Database connected successfully
+2026-06-04 18:57:36 [INFO]: 🚀 Anvexs API running on port 5000 [development]
+2026-06-04 18:57:58 [INFO]: ✅ MongoDB connected
+2026-06-04 18:57:59 [INFO]: ✅ Database connected successfully
+2026-06-04 18:57:59 [INFO]: 🚀 Anvexs API running on port 5000 [development]
+2026-06-04 19:07:15 [INFO]: ✅ MongoDB connected
+2026-06-04 19:07:15 [INFO]: ✅ Database connected successfully
+2026-06-04 19:07:15 [INFO]: 🚀 Anvexs API running on port 5000 [development]
+2026-06-04 19:34:02 [DEBUG]: [DECRYPT] POST /auth/login
+2026-06-04 19:34:03 [DEBUG]: [DECRYPT] POST /auth/refresh
+2026-06-04 19:34:03 [DEBUG]: [DECRYPT] POST /auth/logout
+2026-06-04 19:34:03 [DEBUG]: [DECRYPT] POST /auth/refresh
+2026-06-04 19:34:03 [DEBUG]: [DECRYPT] POST /auth/logout
+2026-06-04 19:34:04 [DEBUG]: [DECRYPT] POST /auth/refresh
+2026-06-04 19:34:04 [DEBUG]: [DECRYPT] POST /auth/logout
+2026-06-04 19:34:04 [DEBUG]: [DECRYPT] POST /auth/refresh
+2026-06-04 19:34:04 [DEBUG]: [DECRYPT] POST /auth/logout
+2026-06-04 19:34:04 [DEBUG]: [DECRYPT] POST /auth/refresh
+2026-06-04 19:35:13 [INFO]: ✅ MongoDB connected
+2026-06-04 19:35:13 [INFO]: ✅ Database connected successfully
+2026-06-04 19:35:13 [INFO]: 🚀 Anvexs API running on port 5000 [development]
+2026-06-04 19:35:31 [DEBUG]: [DECRYPT] POST /auth/register
+2026-06-04 19:35:31 [INFO]: New user registered: shubhz6599@gmail.com
+2026-06-04 19:36:05 [DEBUG]: [DECRYPT] POST /auth/logout
+2026-06-04 19:38:11 [DEBUG]: [DECRYPT] POST /enquiries
+2026-06-04 19:38:11 [INFO]: [DEV] Enquiry for shubh.karkhile@gmail.com
+2026-06-04 19:38:11 [INFO]: New enquiry created: shubh.karkhile@gmail.com - Service: game_development
+2026-06-04 19:38:49 [DEBUG]: [DECRYPT] POST /enquiries
+2026-06-04 19:38:49 [INFO]: [DEV] Enquiry for shubh.karkhile@gmail.com
+2026-06-04 19:38:49 [INFO]: New enquiry created: shubh.karkhile@gmail.com - Service: app_development
+2026-06-04 19:46:06 [INFO]: ✅ MongoDB connected
+2026-06-04 19:46:06 [INFO]: ✅ Database connected successfully
+2026-06-04 19:46:06 [INFO]: 🚀 Anvexs API running on port 5000 [development]
+2026-06-04 19:46:39 [DEBUG]: [DECRYPT] POST /enquiries
+2026-06-04 19:46:39 [INFO]: [DEV] Enquiry for shubh.karkhile@gmail.com
+2026-06-04 19:46:39 [INFO]: New enquiry created: shubh.karkhile@gmail.com - Service: digital_marketing
+2026-06-04 19:47:39 [INFO]: ✅ MongoDB connected
+2026-06-04 19:47:39 [INFO]: ✅ Database connected successfully
+2026-06-04 19:47:40 [INFO]: 🚀 Anvexs API running on port 5000 [development]
+2026-06-04 19:48:04 [DEBUG]: [DECRYPT] POST /enquiries
+2026-06-04 19:48:04 [INFO]: New enquiry created: shubh.karkhile@gmail.com - Service: web_development
+2026-06-04 19:48:05 [ERROR]: ❌ Enquiry email failed: Invalid login: 535-5.7.8 Username and Password not accepted. For more information, go to
+535 5.7.8  https://support.google.com/mail/?p=BadCredentials d9443c01a7336-2c16629cd24sm78582555ad.57 - gsmtp
+2026-06-04 19:54:07 [INFO]: ✅ MongoDB connected
+2026-06-04 19:54:07 [INFO]: ✅ Database connected successfully
+2026-06-04 19:54:07 [INFO]: 🚀 Anvexs API running on port 5000 [development]
+2026-06-04 19:54:31 [DEBUG]: [DECRYPT] POST /enquiries
+2026-06-04 19:54:31 [INFO]: New enquiry created: shubh.karkhile@gmail.com - Service: web_development
+2026-06-04 19:54:53 [ERROR]: ❌ Enquiry email failed: Invalid login: 535 5.7.8 Error: authentication failed: 
+2026-06-04 19:55:34 [INFO]: ✅ MongoDB connected
+2026-06-04 19:55:34 [INFO]: ✅ Database connected successfully
+2026-06-04 19:55:34 [INFO]: 🚀 Anvexs API running on port 5000 [development]
+2026-06-04 19:56:26 [DEBUG]: [DECRYPT] POST /enquiries
+2026-06-04 19:56:26 [INFO]: New enquiry created: shubh.karkhile@gmail.com - Service: web_development
+2026-06-04 19:56:46 [ERROR]: ❌ Enquiry email failed: Invalid login: 535 5.7.8 Error: authentication failed: 
+2026-06-04 20:07:18 [INFO]: ✅ MongoDB connected
+2026-06-04 20:07:18 [INFO]: ✅ Database connected successfully
+2026-06-04 20:07:18 [INFO]: 🚀 Anvexs API running on port 5000 [development]
+2026-06-04 20:08:03 [INFO]: ✅ MongoDB connected
+2026-06-04 20:08:03 [INFO]: ✅ Database connected successfully
+2026-06-04 20:08:03 [INFO]: 🚀 Anvexs API running on port 5000 [development]
+2026-06-04 20:10:39 [INFO]: ✅ MongoDB connected
+2026-06-04 20:10:39 [INFO]: ✅ Database connected successfully
+2026-06-04 20:10:40 [INFO]: 🚀 Anvexs API running on port 5000 [development]
+2026-06-04 20:14:00 [INFO]: ✅ MongoDB connected
+2026-06-04 20:14:00 [INFO]: ✅ Database connected successfully
+2026-06-04 20:14:00 [INFO]: 🚀 Anvexs API running on port 5000 [development]
+2026-06-04 20:14:17 [DEBUG]: [DECRYPT] POST /enquiries
+2026-06-04 20:14:17 [INFO]: [DEV] Email skipped
+2026-06-04 20:14:17 [INFO]: New enquiry created: shubh.karkhile@gmail.com - Service: web_development
+2026-06-04 20:15:00 [INFO]: ✅ MongoDB connected
+2026-06-04 20:15:00 [INFO]: ✅ Database connected successfully
+2026-06-04 20:15:00 [INFO]: 🚀 Anvexs API running on port 5000 [development]
+2026-06-04 20:15:13 [DEBUG]: [DECRYPT] POST /enquiries
+2026-06-04 20:15:13 [INFO]: New enquiry created: shubh.karkhile@gmail.com - Service: app_development
+2026-06-04 20:15:29 [ERROR]: ❌ Enquiry email failed: Invalid login: 535 5.7.8 Error: authentication failed: 
+2026-06-04 20:20:03 [INFO]: ✅ MongoDB connected
+2026-06-04 20:20:03 [INFO]: ✅ Database connected successfully
+2026-06-04 20:20:03 [INFO]: 🚀 Anvexs API running on port 5000 [development]
+2026-06-04 20:20:11 [INFO]: ✅ MongoDB connected
+2026-06-04 20:20:11 [INFO]: ✅ Database connected successfully
+2026-06-04 20:20:11 [INFO]: 🚀 Anvexs API running on port 5000 [development]
+2026-06-04 20:20:29 [INFO]: ✅ MongoDB connected
+2026-06-04 20:20:29 [INFO]: ✅ Database connected successfully
+2026-06-04 20:20:29 [INFO]: 🚀 Anvexs API running on port 5000 [development]

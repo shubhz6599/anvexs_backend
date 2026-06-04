@@ -317,3 +317,15 @@
     at router.route (D:\COding\Anvexs\Main Website\backend\node_modules\router\index.js:428:17)
     at app.route (D:\COding\Anvexs\Main Website\backend\node_modules\express\lib\application.js:257:22)
     at app.all (D:\COding\Anvexs\Main Website\backend\node_modules\express\lib\application.js:495:20)
+2026-06-04 18:59:10 [ERROR]: ReferenceError: body is not defined
+    at file:///D:/COding/Anvexs/Main%20Website/backend/src/routes/blog.routes.js:6:8
+    at ModuleJob.run (node:internal/modules/esm/module_job:439:25)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async node:internal/modules/esm/loader:633:26
+    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:101:5)
+2026-06-04 19:07:02 [ERROR]: ReferenceError: body is not defined
+    at file:///D:/COding/Anvexs/Main%20Website/backend/src/routes/blog.routes.js:6:8
+    at ModuleJob.run (node:internal/modules/esm/module_job:439:25)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async node:internal/modules/esm/loader:633:26
+    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:101:5)

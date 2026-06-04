@@ -7,6 +7,7 @@ import {
   updateApplicationStatus,
 } from '../controllers/career.controller.js';
 import { authenticate, authorize } from '../middleware/auth.middleware.js';
+import upload from '../middleware/fileUpload.js';
 
 const router = express.Router();
 
@@ -16,6 +17,7 @@ router.get('/openings', getOpenings);
 // POST /api/careers/apply - Submit application (public)
 router.post(
   '/apply',
+  upload.single('cv'),
   [
     body('name').trim().notEmpty().withMessage('Name is required'),
     body('email').isEmail().withMessage('Invalid email'),

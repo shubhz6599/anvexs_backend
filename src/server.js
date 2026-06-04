@@ -11,6 +11,8 @@ import authRoutes from './routes/auth.routes.js';
 import enquiryRoutes from './routes/enquiry.routes.js';
 import otpRoutes from './routes/otp.routes.js';
 import careerRoutes from './routes/career.routes.js';
+// import blogRoutes from './routes/blog.routes.js';
+
 
 dotenv.config();
 
@@ -78,6 +80,7 @@ app.use('/api/auth', authRoutes);
 app.use('/api/otp', otpRoutes);
 app.use('/api/enquiries', enquiryRoutes);
 app.use('/api/careers', careerRoutes);
+// app.use('/api/blog', blogRoutes);
 
 // ── 404 Handler ──────────────────────────────
 app.all('*', (req, res) => {

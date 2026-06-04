@@ -79,75 +79,56 @@ export const getOpenings = async (req, res, next) => {
 };
 
 // POST /api/careers/apply - Submit job application
+// POST /api/careers/apply - Updated with file upload
 export const applyForJob = async (req, res, next) => {
   try {
-    const errors = validationResult(req);
-    if (!errors.isEmpty()) {
-      return res.status(400).json({ success: false, errors: errors.array() });
+    const { name, email, phone, position, experience, linkedIn, portfolio, message } = req.body;
+    const cvFile = req.file; // multer middleware
+    
+    // Validations
+    if (!name || !email || !position || !cvFile) {
+      return res.status(400).json({
+        success: false,
+        message: 'Name, email, position, and CV are required'
+      });
     }
-
-    const {
-      name,
-      email,
-      phone,
-      position,
-      experience,
-      skills,
-      linkedInUrl,
-      portfolioUrl,
-      coverLetter,
-    } = req.body;
-
-    // Check for duplicate application within 30 days
-    const thirtyDaysAgo = new Date(Date.now() - 30 * 24 * 60 * 60 * 1000);
+    
+    // Check duplicate
     const existing = await Career.findOne({
       email,
       jobTitle: position,
-      createdAt: { $gte: thirtyDaysAgo },
+      createdAt: { $gte: new Date(Date.now() - 30 * 24 * 60 * 60 * 1000) }
     });
-
+    
     if (existing) {
       return res.status(409).json({
         success: false,
-        message:
-          'You have already applied for this position in the last 30 days. Please try again later.',
+        message: 'Already applied. Try again after 30 days.'
       });
     }
-
-    // Create application record
+    
+    // Save CV file (AWS S3 or local)
+    const cvPath = `uploads/cv/${Date.now()}_${cvFile.originalname}`;
+    
     const application = await Career.create({
       applicantName: name,
       email,
       phone,
       jobTitle: position,
-      experience: experience || 0,
-      skills: skills || [],
-      linkedInUrl,
-      portfolioUrl,
-      coverLetter,
-      status: 'applied',
+      experience,
+      linkedInUrl: linkedIn,
+      portfolioUrl: portfolio,
+      coverLetter: message,
+      cvPath,
+      status: 'applied'
     });
-
-    // Send confirmation email asynchronously
-    sendCareerConfirmation(application).catch((err) => {
-      logger.warn(`Career confirmation email failed: ${err?.message}`);
-    });
-
-    logger.info(
-      `New career application: ${email} for ${position} | ID: ${application._id}`
-    );
-
+    
+    sendCareerConfirmation(application);
+    
     res.status(201).json({
       success: true,
-      message:
-        'Application submitted! We will review and get back to you within 5 business days.',
-      data: {
-        id: application._id,
-        jobTitle: application.jobTitle,
-        applicantName: application.applicantName,
-        status: application.status,
-        appliedAt: application.createdAt,
-      },
+      message: 'Application submitted! We\'ll review within 5 days',
+      data: { id: application._id }
     });
   } catch (error) {
     next(error);

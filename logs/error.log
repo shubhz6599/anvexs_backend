@@ -39,3 +39,8 @@
 2026-06-04 07:20:38 [ERROR]: ❌ Email service verification failed:
 2026-06-04 07:22:44 [ERROR]: ❌ Email service verification failed:
 2026-06-04 07:27:54 [ERROR]: ❌ Email service verification failed:
+2026-06-04 19:48:05 [ERROR]: ❌ Enquiry email failed: Invalid login: 535-5.7.8 Username and Password not accepted. For more information, go to
+535 5.7.8  https://support.google.com/mail/?p=BadCredentials d9443c01a7336-2c16629cd24sm78582555ad.57 - gsmtp
+2026-06-04 19:54:53 [ERROR]: ❌ Enquiry email failed: Invalid login: 535 5.7.8 Error: authentication failed: 
+2026-06-04 19:56:46 [ERROR]: ❌ Enquiry email failed: Invalid login: 535 5.7.8 Error: authentication failed: 
+2026-06-04 20:15:29 [ERROR]: ❌ Enquiry email failed: Invalid login: 535 5.7.8 Error: authentication failed: 

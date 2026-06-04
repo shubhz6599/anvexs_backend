@@ -5,27 +5,30 @@ import { logger } from '../config/logger.js';
 
 // POST /api/enquiries - Create new enquiry
 export const createEnquiry = async (req, res, next) => {
-  try {
+   try {
     const errors = validationResult(req);
     if (!errors.isEmpty()) {
-      return res.status(400).json({ success: false, errors: errors.array() });
+      return res.status(400).json({
+        success: false,
+        errors: errors.array()
+      });
     }
-
+    
     const { name, email, phone, company, service, budget, timeline, message } = req.body;
-
-    // Create enquiry record
+    
+    // Additional validations
+    if (message.length < 20) {
+      return res.status(400).json({
+        success: false,
+        message: 'Message must be at least 20 characters'
+      });
+    }
+    
     const enquiry = await Enquiry.create({
-      name,
-      email,
-      phone,
-      company,
-      service,
-      budget,
-      timeline,
-      message,
+      name, email, phone, company, service, budget, timeline, message,
       ipAddress: req.ip,
       source: 'website',
-      status: 'new',
+      status: 'new'
     });
 
     // Send confirmation email asynchronously (don't block response)

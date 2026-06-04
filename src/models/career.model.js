@@ -32,6 +32,10 @@ const careerSchema = new mongoose.Schema(
       enum: ['applied', 'screening', 'interview', 'offer', 'hired', 'rejected'],
       default: 'applied',
     },
+    cvPath: {
+      type: String,
+      required: true
+    },
     interviewDate: { type: Date, default: null },
     referredBy: { type: String },
   },
