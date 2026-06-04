@@ -3,17 +3,17 @@ import { logger } from '../config/logger.js';
 
 // Create transporter
 const createTransporter = () => {
-  const port = parseInt(process.env.EMAIL_PORT, 10) || 587;
-  const secure = Number(port) === 465;
+  const port = parseInt(process.env.EMAIL_PORT, 10) || 465;
+  const secure = port === 465;
 
   return nodemailer.createTransport({
     host: process.env.EMAIL_HOST,
-    port: port,
-    secure: secure,
+    port,
+    secure,
     auth: {
       user: process.env.EMAIL_USER,
       pass: process.env.EMAIL_PASS,
-    }
+    },
   });
 };
 
