@@ -1,0 +1,250 @@
+2026-06-03 21:10:06 [INFO]: ✅ MongoDB connected
+2026-06-03 21:10:06 [INFO]: 🚀 Anvexs API running on port 5000 [development]
+2026-06-03 22:10:17 [INFO]: ✅ MongoDB connected
+2026-06-03 22:10:17 [INFO]: 🚀 Anvexs API running on port 5000 [development]
+2026-06-03 22:22:22 [ERROR]: Error: CORS blocked: https://anvexs.vercel.app
+    at origin (file:///D:/COding/Anvexs/Main%20Website/backend/src/server.js:35:16)
+    at D:\COding\Anvexs\Main Website\backend\node_modules\cors\lib\index.js:219:13
+    at optionsCallback (D:\COding\Anvexs\Main Website\backend\node_modules\cors\lib\index.js:199:9)
+    at corsMiddleware (D:\COding\Anvexs\Main Website\backend\node_modules\cors\lib\index.js:204:7)
+    at Layer.handle [as handle_request] (D:\COding\Anvexs\Main Website\backend\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (D:\COding\Anvexs\Main Website\backend\node_modules\express\lib\router\index.js:328:13)
+    at D:\COding\Anvexs\Main Website\backend\node_modules\express\lib\router\index.js:286:9
+    at router.process_params (D:\COding\Anvexs\Main Website\backend\node_modules\express\lib\router\index.js:346:12)
+    at next (D:\COding\Anvexs\Main Website\backend\node_modules\express\lib\router\index.js:280:10)
+    at internalNext (file:///D:/COding/Anvexs/Main%20Website/backend/node_modules/helmet/index.mjs:533:6)
+2026-06-03 22:23:35 [INFO]: ✅ MongoDB connected
+2026-06-03 22:23:36 [INFO]: 🚀 Anvexs API running on port 5000 [development]
+2026-06-03 22:23:46 [ERROR]: Error: CORS blocked: https://anvexs.vercel.app
+    at origin (file:///D:/COding/Anvexs/Main%20Website/backend/src/server.js:35:16)
+    at D:\COding\Anvexs\Main Website\backend\node_modules\cors\lib\index.js:219:13
+    at optionsCallback (D:\COding\Anvexs\Main Website\backend\node_modules\cors\lib\index.js:199:9)
+    at corsMiddleware (D:\COding\Anvexs\Main Website\backend\node_modules\cors\lib\index.js:204:7)
+    at Layer.handle [as handle_request] (D:\COding\Anvexs\Main Website\backend\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (D:\COding\Anvexs\Main Website\backend\node_modules\express\lib\router\index.js:328:13)
+    at D:\COding\Anvexs\Main Website\backend\node_modules\express\lib\router\index.js:286:9
+    at router.process_params (D:\COding\Anvexs\Main Website\backend\node_modules\express\lib\router\index.js:346:12)
+    at next (D:\COding\Anvexs\Main Website\backend\node_modules\express\lib\router\index.js:280:10)
+    at internalNext (file:///D:/COding/Anvexs/Main%20Website/backend/node_modules/helmet/index.mjs:533:6)
+2026-06-03 22:24:54 [DEBUG]: [DECRYPT] POST /enquiries
+2026-06-03 22:24:54 [INFO]: [DEV] Enquiry confirmation for shubhkarkhile@gmail.com
+2026-06-03 22:24:54 [INFO]: New enquiry: shubhkarkhile@gmail.com - web_development
+2026-06-03 22:42:43 [INFO]: ✅ MongoDB connected
+2026-06-03 22:42:43 [INFO]: 🚀 Anvexs API running on port 5000 [development]
+2026-06-03 22:43:08 [DEBUG]: [DECRYPT] POST /enquiries
+2026-06-03 22:43:08 [INFO]: [DEV] Enquiry confirmation for shubhkarkhile@gmail.com
+2026-06-03 22:43:08 [INFO]: New enquiry: shubhkarkhile@gmail.com - web_development
+2026-06-03 22:47:04 [INFO]: ✅ MongoDB connected
+2026-06-03 22:47:04 [INFO]: 🚀 Anvexs API running on port 5000 [development]
+2026-06-03 22:47:22 [DEBUG]: [DECRYPT] POST /enquiries
+2026-06-03 22:47:22 [INFO]: [DEV] Enquiry confirmation for shubhz6599@gmail.com
+2026-06-03 22:47:22 [INFO]: New enquiry: shubhz6599@gmail.com - web_development
+2026-06-03 22:48:55 [INFO]: ✅ MongoDB connected
+2026-06-03 22:48:55 [INFO]: 🚀 Anvexs API running on port 5000 [development]
+2026-06-03 22:49:15 [INFO]: ✅ MongoDB connected
+2026-06-03 22:49:15 [INFO]: 🚀 Anvexs API running on port 5000 [development]
+2026-06-03 23:02:47 [INFO]: ✅ MongoDB connected
+2026-06-03 23:02:47 [INFO]: 🚀 Anvexs API running on port 5000 [development]
+2026-06-03 23:04:12 [INFO]: ✅ MongoDB connected
+2026-06-03 23:04:12 [INFO]: 🚀 Anvexs API running on port 5000 [development]
+2026-06-03 23:04:27 [INFO]: ✅ MongoDB connected
+2026-06-03 23:04:27 [INFO]: 🚀 Anvexs API running on port 5000 [development]
+2026-06-03 23:07:26 [INFO]: ✅ MongoDB connected
+2026-06-03 23:07:26 [INFO]: 🚀 Anvexs API running on port 5000 [production]
+2026-06-03 23:07:38 [INFO]: ✅ MongoDB connected
+2026-06-03 23:07:38 [INFO]: 🚀 Anvexs API running on port 5000 [production]
+2026-06-03 23:08:30 [DEBUG]: [DECRYPT] POST /enquiries
+2026-06-03 23:08:30 [INFO]: New enquiry: shubhz6599@gmail.com - web_development
+2026-06-03 23:08:34 [WARN]: Enquiry confirmation email failed:
+2026-06-03 23:11:36 [INFO]: ✅ MongoDB connected
+2026-06-03 23:11:36 [INFO]: 🚀 Anvexs API running on port 5000 [production]
+2026-06-03 23:11:47 [DEBUG]: [DECRYPT] POST /enquiries
+2026-06-03 23:11:47 [INFO]: New enquiry: shubhz6599@gmail.com - web_development
+2026-06-03 23:11:51 [WARN]: Enquiry confirmation email failed: Invalid login: 535 5.7.8 Error: authentication failed: 
+2026-06-03 23:12:50 [INFO]: ✅ MongoDB connected
+2026-06-03 23:12:50 [INFO]: 🚀 Anvexs API running on port 5000 [production]
+2026-06-03 23:13:11 [DEBUG]: [DECRYPT] POST /enquiries
+2026-06-03 23:13:11 [INFO]: New enquiry: shubhz6599@gmail.com - web_development
+2026-06-03 23:13:14 [WARN]: Enquiry confirmation email failed: Invalid login: 535 5.7.8 Error: authentication failed: 
+2026-06-03 23:15:23 [INFO]: ✅ MongoDB connected
+2026-06-03 23:15:23 [INFO]: 🚀 Anvexs API running on port 5000 [production]
+2026-06-03 23:16:33 [INFO]: ✅ MongoDB connected
+2026-06-03 23:16:33 [INFO]: 🚀 Anvexs API running on port 5000 [production]
+2026-06-03 23:16:41 [DEBUG]: [DECRYPT] POST /enquiries
+2026-06-03 23:16:42 [INFO]: New enquiry: shubhz6599@gmail.com - web_development
+2026-06-03 23:16:46 [WARN]: Enquiry confirmation email failed: Invalid login: 535 5.7.8 Error: authentication failed: 
+2026-06-03 23:21:06 [INFO]: ✅ MongoDB connected
+2026-06-03 23:21:06 [INFO]: 🚀 Anvexs API running on port 5000 [production]
+2026-06-03 23:22:22 [INFO]: ✅ MongoDB connected
+2026-06-03 23:22:22 [INFO]: 🚀 Anvexs API running on port 5000 [production]
+2026-06-03 23:22:33 [INFO]: ✅ MongoDB connected
+2026-06-03 23:22:33 [INFO]: 🚀 Anvexs API running on port 5000 [production]
+2026-06-03 23:24:06 [DEBUG]: [DECRYPT] POST /enquiries
+2026-06-03 23:24:06 [INFO]: New enquiry: shubhkarkhile@gmail.com - web_development
+2026-06-03 23:24:10 [WARN]: Enquiry confirmation email failed: Invalid login: 535 5.7.8 Error: authentication failed: 
+2026-06-03 23:25:12 [INFO]: ✅ MongoDB connected
+2026-06-03 23:25:12 [INFO]: 🚀 Anvexs API running on port 5000 [production]
+2026-06-03 23:25:24 [DEBUG]: [DECRYPT] POST /enquiries
+2026-06-03 23:25:24 [INFO]: New enquiry: shubhz6599@gmail.com - web_development
+2026-06-03 23:25:27 [WARN]: Enquiry confirmation email failed: Invalid login: 535 5.7.8 Error: authentication failed: 
+2026-06-03 23:27:16 [INFO]: ✅ MongoDB connected
+2026-06-03 23:27:16 [INFO]: 🚀 Anvexs API running on port 5000 [production]
+2026-06-03 23:31:06 [INFO]: ✅ MongoDB connected
+2026-06-03 23:31:06 [INFO]: 🚀 Anvexs API running on port 5000 [production]
+2026-06-03 23:32:07 [INFO]: ✅ MongoDB connected
+2026-06-03 23:32:07 [INFO]: 🚀 Anvexs API running on port 5000 [production]
+2026-06-03 23:32:12 [DEBUG]: [DECRYPT] POST /enquiries
+2026-06-03 23:32:12 [INFO]: New enquiry: shubhz6599@gmail.com - web_development
+2026-06-03 23:32:12 [WARN]: Enquiry confirmation email failed: transporter is not defined
+2026-06-03 23:32:27 [INFO]: ✅ MongoDB connected
+2026-06-03 23:32:27 [INFO]: 🚀 Anvexs API running on port 5000 [production]
+2026-06-03 23:32:47 [DEBUG]: [DECRYPT] POST /enquiries
+2026-06-03 23:32:47 [INFO]: New enquiry: shubhz6599@gmail.com - web_development
+2026-06-03 23:32:47 [WARN]: Enquiry confirmation email failed: transporter is not defined
+2026-06-03 23:34:14 [INFO]: ✅ MongoDB connected
+2026-06-03 23:34:14 [INFO]: 🚀 Anvexs API running on port 5000 [production]
+2026-06-03 23:34:36 [INFO]: ✅ MongoDB connected
+2026-06-03 23:34:36 [INFO]: 🚀 Anvexs API running on port 5000 [production]
+2026-06-03 23:34:48 [DEBUG]: [DECRYPT] POST /enquiries
+2026-06-03 23:34:49 [INFO]: New enquiry: shubhz6599@gmail.com - web_development
+2026-06-03 23:34:53 [WARN]: Enquiry confirmation email failed: Invalid login: 535 5.7.8 Error: authentication failed: 
+2026-06-03 23:36:08 [INFO]: ✅ MongoDB connected
+2026-06-03 23:36:08 [INFO]: 🚀 Anvexs API running on port 5000 [production]
+2026-06-03 23:36:17 [INFO]: ✅ MongoDB connected
+2026-06-03 23:36:17 [INFO]: 🚀 Anvexs API running on port 5000 [production]
+2026-06-03 23:36:25 [DEBUG]: [DECRYPT] POST /enquiries
+2026-06-03 23:36:25 [INFO]: New enquiry: shubhz6599@gmail.com - web_development
+2026-06-03 23:36:25 [WARN]: Enquiry confirmation email failed: getaddrinfo ENOTFOUND mail.titan.email
+2026-06-03 23:37:02 [INFO]: ✅ MongoDB connected
+2026-06-03 23:37:02 [INFO]: 🚀 Anvexs API running on port 5000 [production]
+2026-06-03 23:41:20 [INFO]: ✅ MongoDB connected
+2026-06-03 23:41:20 [INFO]: 🚀 Anvexs API running on port 5000 [production]
+2026-06-03 23:41:27 [DEBUG]: [DECRYPT] POST /enquiries
+2026-06-03 23:41:27 [INFO]: New enquiry: shubhz6599@gmail.com - web_development
+2026-06-03 23:41:48 [WARN]: Enquiry confirmation email failed: connect ETIMEDOUT 76.223.17.250:587
+2026-06-03 23:43:20 [INFO]: ✅ MongoDB connected
+2026-06-03 23:43:20 [INFO]: 🚀 Anvexs API running on port 5000 [production]
+2026-06-03 23:43:37 [INFO]: ✅ MongoDB connected
+2026-06-03 23:43:37 [INFO]: 🚀 Anvexs API running on port 5000 [production]
+2026-06-03 23:43:46 [DEBUG]: [DECRYPT] POST /enquiries
+2026-06-03 23:43:46 [INFO]: New enquiry: shubhz6599@gmail.com - web_development
+2026-06-03 23:43:49 [WARN]: Enquiry confirmation email failed: Invalid login: 535 5.7.8 Error: authentication failed: 
+2026-06-03 23:44:55 [INFO]: ✅ MongoDB connected
+2026-06-03 23:44:55 [INFO]: 🚀 Anvexs API running on port 5000 [production]
+2026-06-03 23:45:15 [INFO]: ✅ MongoDB connected
+2026-06-03 23:45:15 [INFO]: 🚀 Anvexs API running on port 5000 [production]
+2026-06-03 23:45:54 [INFO]: ✅ MongoDB connected
+2026-06-03 23:45:54 [INFO]: 🚀 Anvexs API running on port 5000 [production]
+2026-06-03 23:46:09 [INFO]: ✅ MongoDB connected
+2026-06-03 23:46:10 [INFO]: 🚀 Anvexs API running on port 5000 [production]
+2026-06-03 23:46:15 [DEBUG]: [DECRYPT] POST /enquiries
+2026-06-03 23:46:15 [INFO]: New enquiry: shubhz6599@gmail.com - web_development
+2026-06-03 23:46:19 [WARN]: Enquiry confirmation email failed: Invalid login: 535 5.7.8 Error: authentication failed: UGFzc3dvcmQ6
+2026-06-04 00:00:26 [INFO]: ✅ MongoDB connected
+2026-06-04 00:00:26 [INFO]: 🚀 Anvexs API running on port 5000 [production]
+2026-06-04 00:05:30 [INFO]: ✅ MongoDB connected
+2026-06-04 00:05:30 [INFO]: ✅ Database connected successfully
+2026-06-04 00:05:35 [ERROR]: ❌ Email service verification failed:
+2026-06-04 00:05:35 [WARN]: ⚠️  Email service verification failed. Emails will not be sent in production. Check .env configuration.
+2026-06-04 00:05:35 [INFO]: 🚀 Anvexs API running on port 5000 [development]
+2026-06-04 00:06:07 [INFO]: ✅ MongoDB connected
+2026-06-04 00:06:07 [INFO]: ✅ Database connected successfully
+2026-06-04 00:06:12 [ERROR]: ❌ Email service verification failed:
+2026-06-04 00:06:12 [WARN]: ⚠️  Email service verification failed. Emails will not be sent in production. Check .env configuration.
+2026-06-04 00:06:12 [INFO]: 🚀 Anvexs API running on port 5000 [development]
+2026-06-04 00:06:34 [INFO]: ✅ MongoDB connected
+2026-06-04 00:06:34 [INFO]: ✅ Database connected successfully
+2026-06-04 00:06:38 [ERROR]: ❌ Email service verification failed:
+2026-06-04 00:06:38 [WARN]: ⚠️  Email service verification failed. Emails will not be sent in production. Check .env configuration.
+2026-06-04 00:06:38 [INFO]: 🚀 Anvexs API running on port 5000 [development]
+2026-06-04 00:07:05 [INFO]: ✅ MongoDB connected
+2026-06-04 00:07:06 [INFO]: ✅ Database connected successfully
+2026-06-04 00:07:10 [ERROR]: ❌ Email service verification failed:
+2026-06-04 00:07:10 [WARN]: ⚠️  Email service verification failed. Emails will not be sent in production. Check .env configuration.
+2026-06-04 00:07:10 [INFO]: 🚀 Anvexs API running on port 5000 [development]
+2026-06-04 00:07:51 [DEBUG]: [DECRYPT] POST /enquiries
+2026-06-04 00:07:51 [INFO]: [DEV MODE] Enquiry confirmation for shubh.karkhile@gmail.com
+2026-06-04 00:07:51 [INFO]: New enquiry created: shubh.karkhile@gmail.com - Service: web_development
+2026-06-04 00:08:40 [DEBUG]: [DECRYPT] POST /enquiries
+2026-06-04 00:08:53 [DEBUG]: [DECRYPT] POST /enquiries
+2026-06-04 00:09:15 [DEBUG]: [DECRYPT] POST /enquiries
+2026-06-04 00:09:15 [INFO]: [DEV MODE] Enquiry confirmation for shubhz6599@gmail.com
+2026-06-04 00:09:15 [INFO]: New enquiry created: shubhz6599@gmail.com - Service: web_development
+2026-06-04 00:09:51 [INFO]: ✅ MongoDB connected
+2026-06-04 00:09:51 [INFO]: ✅ Database connected successfully
+2026-06-04 00:09:55 [ERROR]: ❌ Email service verification failed:
+2026-06-04 00:09:55 [WARN]: ⚠️  Email service verification failed. Emails will not be sent in production. Check .env configuration.
+2026-06-04 00:09:55 [INFO]: 🚀 Anvexs API running on port 5000 [development]
+2026-06-04 00:10:18 [DEBUG]: [DECRYPT] POST /enquiries
+2026-06-04 00:10:18 [INFO]: [DEV MODE] Enquiry confirmation for shubhz6599@gmail.com
+2026-06-04 00:10:18 [INFO]: New enquiry created: shubhz6599@gmail.com - Service: web_development
+2026-06-04 00:11:56 [INFO]: ✅ MongoDB connected
+2026-06-04 00:11:56 [INFO]: ✅ Database connected successfully
+2026-06-04 00:12:00 [ERROR]: ❌ Email service verification failed:
+2026-06-04 00:12:00 [WARN]: ⚠️  Email service verification failed. Emails will not be sent in production. Check .env configuration.
+2026-06-04 00:12:00 [INFO]: 🚀 Anvexs API running on port 5000 [production]
+2026-06-04 00:12:09 [DEBUG]: [DECRYPT] POST /enquiries
+2026-06-04 00:12:09 [INFO]: New enquiry created: shubh.karkhile@gmail.com - Service: web_development
+2026-06-04 00:12:12 [ERROR]: ❌ Failed to send enquiry confirmation to shubh.karkhile@gmail.com:
+2026-06-04 00:12:12 [WARN]: Enquiry confirmation email failed: Invalid login: 535 5.7.8 Error: authentication failed: 
+2026-06-04 00:17:11 [INFO]: ✅ MongoDB connected
+2026-06-04 00:17:11 [INFO]: ✅ Database connected successfully
+2026-06-04 00:17:16 [ERROR]: ❌ Email service verification failed:
+2026-06-04 00:17:16 [WARN]: ⚠️  Email service verification failed. Emails will not be sent in production. Check .env configuration.
+2026-06-04 00:17:16 [INFO]: 🚀 Anvexs API running on port 5000 [production]
+2026-06-04 00:17:19 [DEBUG]: [DECRYPT] POST /enquiries
+2026-06-04 00:17:27 [DEBUG]: [DECRYPT] POST /enquiries
+2026-06-04 00:17:27 [INFO]: New enquiry created: shubhz6599@gmail.com - Service: web_development
+2026-06-04 00:17:30 [ERROR]: ❌ Failed to send enquiry confirmation to shubhz6599@gmail.com:
+2026-06-04 00:17:30 [WARN]: Enquiry confirmation email failed: Invalid login: 535 5.7.8 Error: authentication failed: 
+2026-06-04 00:18:30 [INFO]: ✅ MongoDB connected
+2026-06-04 00:18:30 [INFO]: ✅ Database connected successfully
+2026-06-04 00:18:34 [ERROR]: ❌ Email service verification failed:
+2026-06-04 00:18:34 [WARN]: ⚠️  Email service verification failed. Emails will not be sent in production. Check .env configuration.
+2026-06-04 00:18:34 [INFO]: 🚀 Anvexs API running on port 5000 [production]
+2026-06-04 00:18:48 [INFO]: ✅ MongoDB connected
+2026-06-04 00:18:48 [INFO]: ✅ Database connected successfully
+2026-06-04 00:18:52 [ERROR]: ❌ Email service verification failed:
+2026-06-04 00:18:52 [WARN]: ⚠️  Email service verification failed. Emails will not be sent in production. Check .env configuration.
+2026-06-04 00:18:52 [INFO]: 🚀 Anvexs API running on port 5000 [production]
+2026-06-04 00:20:46 [INFO]: ✅ MongoDB connected
+2026-06-04 00:20:46 [INFO]: ✅ Database connected successfully
+2026-06-04 00:20:50 [ERROR]: ❌ Email service verification failed:
+2026-06-04 00:20:50 [WARN]: ⚠️  Email service verification failed. Emails will not be sent in production. Check .env configuration.
+2026-06-04 00:20:50 [INFO]: 🚀 Anvexs API running on port 5000 [production]
+2026-06-04 06:41:30 [INFO]: ✅ MongoDB connected
+2026-06-04 06:41:30 [INFO]: ✅ Database connected successfully
+2026-06-04 06:41:31 [ERROR]: ❌ Email service verification failed:
+2026-06-04 06:41:31 [WARN]: ⚠️  Email service verification failed. Emails will not be sent in production. Check .env configuration.
+2026-06-04 06:41:31 [INFO]: 🚀 Anvexs API running on port 5000 [production]
+2026-06-04 06:44:21 [DEBUG]: [DECRYPT] POST /enquiries
+2026-06-04 07:14:12 [INFO]: ✅ MongoDB connected
+2026-06-04 07:14:12 [INFO]: ✅ Database connected successfully
+2026-06-04 07:14:12 [ERROR]: ❌ Email service verification failed:
+2026-06-04 07:14:12 [WARN]: ⚠️  Email service verification failed. Emails will not be sent in production. Check .env configuration.
+2026-06-04 07:14:12 [INFO]: 🚀 Anvexs API running on port 5000 [production]
+2026-06-04 07:15:47 [INFO]: ✅ MongoDB connected
+2026-06-04 07:15:47 [INFO]: ✅ Database connected successfully
+2026-06-04 07:16:04 [ERROR]: ❌ Email service verification failed:
+2026-06-04 07:16:04 [WARN]: ⚠️  Email service verification failed. Emails will not be sent in production. Check .env configuration.
+2026-06-04 07:16:04 [INFO]: 🚀 Anvexs API running on port 5000 [production]
+2026-06-04 07:18:01 [INFO]: ✅ MongoDB connected
+2026-06-04 07:18:01 [INFO]: ✅ Database connected successfully
+2026-06-04 07:18:22 [ERROR]: ❌ Email service verification failed:
+2026-06-04 07:18:22 [WARN]: ⚠️  Email service verification failed. Emails will not be sent in production. Check .env configuration.
+2026-06-04 07:18:22 [INFO]: 🚀 Anvexs API running on port 5000 [production]
+2026-06-04 07:20:35 [INFO]: ✅ MongoDB connected
+2026-06-04 07:20:35 [INFO]: ✅ Database connected successfully
+2026-06-04 07:20:38 [ERROR]: ❌ Email service verification failed:
+2026-06-04 07:20:38 [WARN]: ⚠️  Email service verification failed. Emails will not be sent in production. Check .env configuration.
+2026-06-04 07:20:38 [INFO]: 🚀 Anvexs API running on port 5000 [development]
+2026-06-04 07:22:25 [INFO]: ✅ MongoDB connected
+2026-06-04 07:22:25 [INFO]: ✅ Database connected successfully
+2026-06-04 07:22:44 [ERROR]: ❌ Email service verification failed:
+2026-06-04 07:22:44 [WARN]: ⚠️  Email service verification failed. Emails will not be sent in production. Check .env configuration.
+2026-06-04 07:22:44 [INFO]: 🚀 Anvexs API running on port 5000 [development]
+2026-06-04 07:27:23 [INFO]: ✅ MongoDB connected
+2026-06-04 07:27:23 [INFO]: ✅ Database connected successfully
+2026-06-04 07:27:54 [ERROR]: ❌ Email service verification failed:
+2026-06-04 07:27:54 [WARN]: ⚠️  Email service verification failed. Emails will not be sent in production. Check .env configuration.
+2026-06-04 07:27:54 [INFO]: 🚀 Anvexs API running on port 5000 [development]
