@@ -78,16 +78,13 @@ const enquiryEmailTemplate = (enquiry) => `
 // Send OTP
 export const sendOTPEmail = async (email, otp, purpose) => {
   try {
-    console.log('EMAIL_HOST:', process.env.EMAIL_HOST);
-    console.log('EMAIL_PORT:', process.env.EMAIL_PORT);
-    console.log('EMAIL_USER:', process.env.EMAIL_USER);
-    console.log('EMAIL_FROM:', process.env.EMAIL_FROM);
+
     if (process.env.EMAIL_DEV_MODE === 'true') {
       logger.info(`[DEV] Email skipped`);
       console.log(`📧 DEV MODE: Email not sent`);
       return { success: true };
     }
-
+    console.log("email", email)
     const transporter = createTransporter();
     await transporter.sendMail({
       from: process.env.EMAIL_FROM,
