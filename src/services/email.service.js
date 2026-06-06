@@ -86,14 +86,15 @@ export const sendOTPEmail = async (email, otp, purpose) => {
     }
     console.log("email", email)
     const transporter = createTransporter();
-    await transporter.sendMail({
-      from: process.env.EMAIL_FROM,
-      to: email,
-      subject: 'Your Anvexs OTP',
-      html: otpEmailTemplate(otp),
-      text: `Your OTP: ${otp}`,
+    await new Promise((resolve, reject) => {
+      transporter.sendMail({
+        from: process.env.EMAIL_FROM,
+        to: email,
+        subject: 'Your Anvexs OTP',
+        html: otpEmailTemplate(otp),
+        text: `Your OTP: ${otp}`,
+      });
     });
-
     logger.info(`✅ OTP sent to ${email}`);
     console.log(`📧 OTP sent to ${email}`);
     return { success: true };
