@@ -47,9 +47,10 @@ export const login = async (req, res, next) => {
       if (user.incrementLoginAttempts) await user.incrementLoginAttempts();
       return res.status(401).json({ success: false, message: 'Invalid email or password.' });
     }
-    if (!user.isVerified) {
-      return res.status(403).json({ success: false, message: 'Please verify your email first.', code: 'EMAIL_NOT_VERIFIED' });
-    }
+    // uncomment below blk when otp service will work fine
+    // if (!user.isVerified) {
+    //   return res.status(403).json({ success: false, message: 'Please verify your email first.', code: 'EMAIL_NOT_VERIFIED' });
+    // }
     if (user.isActive === false) {
       return res.status(403).json({ success: false, message: 'Account deactivated. Contact support.' });
     }

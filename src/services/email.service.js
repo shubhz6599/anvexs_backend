@@ -9,8 +9,7 @@ const createTransporter = () => {
   return nodemailer.createTransport({
     host: process.env.EMAIL_HOST,
     port,
-    secure: true,
-    family: 4,
+    secure,
     auth: {
       user: process.env.EMAIL_USER,
       pass: process.env.EMAIL_PASS,
@@ -87,22 +86,13 @@ export const sendOTPEmail = async (email, otp, purpose) => {
     }
     console.log("email", email)
     const transporter = createTransporter();
-
-    console.log('VERIFYING SMTP...');
-
-    await transporter.verify();
-
-    console.log('SMTP VERIFIED');
-
-    const info = await transporter.sendMail({
+    await transporter.sendMail({
       from: process.env.EMAIL_FROM,
       to: email,
-      subject: 'Test Mail',
-      text: 'Test',
+      subject: 'Your Anvexs OTP',
+      html: otpEmailTemplate(otp),
+      text: `Your OTP: ${otp}`,
     });
-
-    console.log('MESSAGE ID:', info.messageId);
-    console.log('RESPONSE:', info.response);
 
     logger.info(`✅ OTP sent to ${email}`);
     console.log(`📧 OTP sent to ${email}`);
