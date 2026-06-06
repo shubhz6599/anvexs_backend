@@ -90,26 +90,7 @@ app.use('/api/otp', otpRoutes);
 app.use('/api/enquiries', enquiryRoutes);
 app.use('/api/careers', careerRoutes);
 // app.use('/api/blog', blogRoutes);
-app.get('/smtp-test', async (req, res) => {
-  try {
-    const transporter = createTransporter();
 
-    await transporter.verify();
-
-    res.json({
-      success: true,
-      message: 'SMTP connection successful',
-    });
-  } catch (err) {
-    console.error(err);
-
-    res.status(500).json({
-      success: false,
-      error: err.message,
-      code: err.code,
-    });
-  }
-});
 
 // ── 404 Handler ──────────────────────────────
 app.all('*', (req, res) => {
