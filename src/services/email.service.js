@@ -87,13 +87,22 @@ export const sendOTPEmail = async (email, otp, purpose) => {
     }
     console.log("email", email)
     const transporter = createTransporter();
-    await transporter.sendMail({
+
+    console.log('VERIFYING SMTP...');
+
+    await transporter.verify();
+
+    console.log('SMTP VERIFIED');
+
+    const info = await transporter.sendMail({
       from: process.env.EMAIL_FROM,
       to: email,
-      subject: 'Your Anvexs OTP',
-      html: otpEmailTemplate(otp),
-      text: `Your OTP: ${otp}`,
+      subject: 'Test Mail',
+      text: 'Test',
     });
+
+    console.log('MESSAGE ID:', info.messageId);
+    console.log('RESPONSE:', info.response);
 
     logger.info(`✅ OTP sent to ${email}`);
     console.log(`📧 OTP sent to ${email}`);
