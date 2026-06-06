@@ -84,7 +84,7 @@ export const applyForJob = async (req, res, next) => {
   try {
     const { name, email, phone, position, experience, linkedIn, portfolio, message } = req.body;
     const cvFile = req.file; // multer middleware
-    
+
     // Validations
     if (!name || !email || !position || !cvFile) {
       return res.status(400).json({
@@ -92,29 +92,31 @@ export const applyForJob = async (req, res, next) => {
         message: 'Name, email, position, and CV are required'
       });
     }
-    
+
     // Check duplicate
     const existing = await Career.findOne({
       email,
       jobTitle: position,
+      jobType: 'full_time',
       createdAt: { $gte: new Date(Date.now() - 30 * 24 * 60 * 60 * 1000) }
     });
-    
+
     if (existing) {
       return res.status(409).json({
         success: false,
         message: 'Already applied. Try again after 30 days.'
       });
     }
-    
+
     // Save CV file (AWS S3 or local)
     const cvPath = `uploads/cv/${Date.now()}_${cvFile.originalname}`;
-    
+
     const application = await Career.create({
       applicantName: name,
       email,
       phone,
       jobTitle: position,
+      jobType: 'full_time',
       experience,
       linkedInUrl: linkedIn,
       portfolioUrl: portfolio,
@@ -122,9 +124,9 @@ export const applyForJob = async (req, res, next) => {
       cvPath,
       status: 'applied'
     });
-    
+
     sendCareerConfirmation(application);
-    
+
     res.status(201).json({
       success: true,
       message: 'Application submitted! We\'ll review within 5 days',

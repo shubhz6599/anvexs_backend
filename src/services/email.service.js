@@ -70,7 +70,7 @@ const enquiryEmailTemplate = (enquiry) => `
     <p style="color:#8b949e;line-height:1.6">Hi <strong>${enquiry.name}</strong>,</p>
     <p style="color:#8b949e;line-height:1.6">We've received your enquiry and will get back to you within <strong>24 hours</strong>.</p>
     ${enquiry.service ? `<p style="color:#6e7681;margin:15px 0"><strong>Service:</strong> ${enquiry.service.replace(/_/g, ' ').toUpperCase()}</p>` : ''}
-    <p style="color:#6e7681;font-size:13px">For immediate help, contact us at +91 99999 99999</p>
+    <p style="color:#6e7681;font-size:13px">For immediate help, contact us at +91 78418 68521</p>
   </div>
 </body>
 </html>`;
