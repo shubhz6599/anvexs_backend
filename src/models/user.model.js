@@ -85,7 +85,6 @@ userSchema.virtual('fullName').get(function () {
 });
 
 // ── Indexes ──────────────────────────────────
-userSchema.index({ email: 1 });
 userSchema.index({ createdAt: -1 });
 
 const User = mongoose.model('User', userSchema);
