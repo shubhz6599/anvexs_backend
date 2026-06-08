@@ -1,49 +1,34 @@
-// ============================================
-// ANVEXS - Career Application Model
-// ============================================
 import mongoose from 'mongoose';
 
 const careerSchema = new mongoose.Schema(
   {
-    jobTitle: { type: String, required: true, trim: true },
-    jobType: {
-      type: String,
-      enum: ['full_time', 'part_time', 'internship', 'contract', 'freelance'],
-      required: true,
-    },
-    department: {
-      type: String,
-      enum: ['engineering', 'design', 'marketing', 'sales', 'hr', 'finance', 'operations'],
-    },
-    applicantName: { type: String, required: true, trim: true, maxlength: 100 },
-    email: { type: String, required: true, lowercase: true, trim: true },
-    phone: { type: String, trim: true },
-    linkedInUrl: { type: String, trim: true },
+    jobTitle:     { type: String, required: true, trim: true },
+    jobType:      { type: String, enum: ['full_time', 'part_time', 'internship', 'contract'], default: 'full_time' },
+    department:   { type: String, trim: true },
+    applicantName:{ type: String, required: true, trim: true },
+    email:        { type: String, required: true, lowercase: true, trim: true },
+    phone:        { type: String, trim: true },
+    experience:   { type: Number, default: 0 },
+    skills:       [String],
+    linkedInUrl:  { type: String, trim: true },
     portfolioUrl: { type: String, trim: true },
-    resumeUrl: { type: String, trim: true }, // S3/cloud storage URL
-    experience: { type: Number, min: 0, max: 50 }, // years
-    currentCTC: { type: String },
-    expectedCTC: { type: String },
-    noticePeriod: { type: String },
-    skills: [{ type: String, trim: true }],
-    coverLetter: { type: String, trim: true, maxlength: 3000 },
+    coverLetter:  { type: String, trim: true },
+
+    // CV stored as Cloudinary HTTPS URL (viewable directly in browser)
+    cvPath:       { type: String },   // full https://res.cloudinary.com/... URL
+    cvPublicId:   { type: String },   // cloudinary public_id for deletion
+
     status: {
       type: String,
-      enum: ['applied', 'screening', 'interview', 'offer', 'hired', 'rejected'],
+      enum: ['applied', 'reviewed', 'shortlisted', 'interview', 'rejected', 'hired'],
       default: 'applied',
     },
-    cvPath: {
-      type: String,
-      required: true
-    },
     interviewDate: { type: Date, default: null },
-    referredBy: { type: String },
   },
   { timestamps: true }
 );
 
-careerSchema.index({ email: 1 });
-careerSchema.index({ jobTitle: 1, status: 1 });
+// Index for duplicate check
+careerSchema.index({ email: 1, jobTitle: 1, createdAt: -1 });
 
-const Career = mongoose.model('Career', careerSchema);
-export default Career;
+export default mongoose.model('Career', careerSchema);

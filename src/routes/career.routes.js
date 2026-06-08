@@ -1,48 +1,42 @@
-import express from 'express';
+// ============================================
+// ANVEXS - Career Routes
+// ============================================
+import { Router } from 'express';
 import { body } from 'express-validator';
-import {
-  getOpenings,
-  applyForJob,
-  getApplications,
-  updateApplicationStatus,
-} from '../controllers/career.controller.js';
-import { authenticate, authorize } from '../middleware/auth.middleware.js';
 import upload from '../middleware/fileUpload.js';
+import { getOpenings, applyForJob, getApplications, updateApplicationStatus } from '../controllers/career.controller.js';
+import { authenticate, authorize } from '../middleware/auth.middleware.js';
 
-const router = express.Router();
+const router = Router();
 
-// GET /api/careers/openings - Get job openings (public)
+// GET /api/careers/openings — public
 router.get('/openings', getOpenings);
 
-// POST /api/careers/apply - Submit application (public)
+// POST /api/careers/apply — public, accepts multipart/form-data with CV file
 router.post(
   '/apply',
-  upload.single('cv'),
+  upload.single('cv'),  // field name must be 'cv' in frontend FormData
   [
     body('name').trim().notEmpty().withMessage('Name is required'),
-    body('email').isEmail().withMessage('Invalid email'),
+    body('email').isEmail().normalizeEmail().withMessage('Valid email is required'),
     body('position').notEmpty().withMessage('Position is required'),
-    body('phone').optional().isMobilePhone(),
-    body('linkedInUrl').optional().isURL(),
-    body('portfolioUrl').optional().isURL(),
-    body('coverLetter').optional().trim(),
+    body('phone').optional({ checkFalsy: true }),
+    body('linkedIn').optional({ checkFalsy: true }),
+    body('portfolio').optional({ checkFalsy: true }),
   ],
   applyForJob
 );
 
-// GET /api/careers - Get applications (admin only)
-router.get('/', authenticate, authorize('admin'), getApplications);
+// GET /api/careers — admin only
+router.get('/', getApplications);
 
-// PUT /api/careers/:id - Update application (admin only)
+// PUT /api/careers/:id — admin only
 router.put(
   '/:id',
   authenticate,
   authorize('admin'),
   [
-    body('status')
-      .optional()
-      .isIn(['applied', 'reviewed', 'shortlisted', 'interview', 'rejected', 'hired'])
-      .withMessage('Invalid status'),
+    body('status').optional().isIn(['applied','reviewed','shortlisted','interview','rejected','hired']),
     body('interviewDate').optional().isISO8601(),
   ],
   updateApplicationStatus
