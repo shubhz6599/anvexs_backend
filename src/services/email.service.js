@@ -9,11 +9,12 @@ const createTransporter = () => {
   return nodemailer.createTransport({
     host: process.env.EMAIL_HOST,
     port,
-    secure,
+    secure :false,
     auth: {
       user: process.env.EMAIL_USER,
       pass: process.env.EMAIL_PASS,
     },
+    requireTLS: true,
   });
 };
 
