@@ -47,12 +47,12 @@ export const verifyEmailConfig = async () => {
       logger.error(`❌ Email verification failed: ${err.message}`);
       return false;
     }
-  }catch(err){
+  } catch (err) {
     console.log(err)
   }
 }
 
-  const otpEmailTemplate = (otp) => `
+const otpEmailTemplate = (otp) => `
 <!DOCTYPE html>
 <html>
 <head><meta charset="UTF-8"><title>Anvexs OTP</title></head>
@@ -70,7 +70,7 @@ export const verifyEmailConfig = async () => {
 </body>
 </html>`;
 
-  const enquiryEmailTemplate = (enquiry) => `
+const enquiryEmailTemplate = (enquiry) => `
 <!DOCTYPE html>
 <html>
 <head><meta charset="UTF-8"><title>Enquiry Confirmation</title></head>
@@ -87,96 +87,102 @@ export const verifyEmailConfig = async () => {
 </body>
 </html>`;
 
-  // Send OTP
-  export const sendOTPEmail = async (email, otp, purpose) => {
-    try {
+// Send OTP
+export const sendOTPEmail = async (email, otp, purpose) => {
+  try {
 
-      if (process.env.EMAIL_DEV_MODE === 'true') {
-        logger.info(`[DEV] Email skipped`);
-        console.log(`📧 DEV MODE: Email not sent`);
-        return { success: true };
-      }
-      console.log("email", email)
-      const transporter = createTransporter();
-      const info = await transporter.sendMail({
-        from: process.env.EMAIL_FROM,
-        to: email,
-        subject: 'Your Anvexs OTP',
-        html: otpEmailTemplate(otp),
-        text: `Your OTP: ${otp}`,
-      });
+    console.log('STEP 1');
 
-      console.log('MAIL INFO:', info);
-      logger.info(`✅ OTP sent to ${email}`);
-      console.log(`📧 OTP sent to ${email}`);
+    const transporter = createTransporter();
+
+    console.log('STEP 2');
+
+    const info = await transporter.sendMail({
+      from: process.env.EMAIL_FROM,
+      to: email,
+      subject: 'Your Anvexs OTP',
+      html: otpEmailTemplate(otp),
+      text: `Your OTP: ${otp}`,
+    });
+
+    console.log('STEP 3');
+    console.log(info);
+
+    return {
+      success: true
+    };
+
+  } catch (error) {
+    console.log('STEP ERROR');
+    console.error(error);
+
+    return {
+      success: false,
+      error: error.message
+    };
+  }
+};
+
+// Send enquiry confirmation
+export const sendEnquiryConfirmation = async (enquiry) => {
+  try {
+    if (process.env.EMAIL_DEV_MODE === 'true') {
+      logger.info(`[DEV] Email skipped`);
+      console.log(`📧 DEV MODE: Email not sent`);
       return { success: true };
-    } catch (error) {
-      logger.error(`❌ OTP failed: ${error.message}`);
-      console.error(`❌ OTP Error:`, error.message);
-      return { success: false, error: error.message };
     }
-  };
 
-  // Send enquiry confirmation
-  export const sendEnquiryConfirmation = async (enquiry) => {
-    try {
-      if (process.env.EMAIL_DEV_MODE === 'true') {
-        logger.info(`[DEV] Email skipped`);
-        console.log(`📧 DEV MODE: Email not sent`);
-        return { success: true };
-      }
+    const transporter = createTransporter();
 
-      const transporter = createTransporter();
+    console.log("SMTP DEBUG:", {
+      host: process.env.EMAIL_HOST,
+      user: process.env.EMAIL_USER,
+      port: process.env.EMAIL_PORT,
+    });
+    await transporter.sendMail({
+      from: process.env.EMAIL_FROM,
+      to: enquiry.email,
+      subject: 'We Received Your Enquiry - Anvexs',
+      html: enquiryEmailTemplate(enquiry),
+      text: `Hi ${enquiry.name}, we received your enquiry. We'll get back within 24 hours.`,
+    });
 
-      console.log("SMTP DEBUG:", {
-        host: process.env.EMAIL_HOST,
-        user: process.env.EMAIL_USER,
-        port: process.env.EMAIL_PORT,
-      });
-      await transporter.sendMail({
-        from: process.env.EMAIL_FROM,
-        to: enquiry.email,
-        subject: 'We Received Your Enquiry - Anvexs',
-        html: enquiryEmailTemplate(enquiry),
-        text: `Hi ${enquiry.name}, we received your enquiry. We'll get back within 24 hours.`,
-      });
+    logger.info(`✅ Enquiry confirmation sent to ${enquiry.email}`);
+    console.log(`📧 Enquiry email sent to ${enquiry.email}`);
+    return { success: true };
+  } catch (error) {
+    logger.error(`❌ Enquiry email failed: ${error.message}`);
+    console.error(`❌ Enquiry Email Error:`, error.message);
+    return { success: false, error: error.message };
+  }
+};
 
-      logger.info(`✅ Enquiry confirmation sent to ${enquiry.email}`);
-      console.log(`📧 Enquiry email sent to ${enquiry.email}`);
+// Send career confirmation
+export const sendCareerConfirmation = async (application) => {
+  try {
+    if (process.env.EMAIL_DEV_MODE === 'true') {
+      logger.info(`[DEV] Email skipped`);
+      console.log(`📧 DEV MODE: Email not sent`);
       return { success: true };
-    } catch (error) {
-      logger.error(`❌ Enquiry email failed: ${error.message}`);
-      console.error(`❌ Enquiry Email Error:`, error.message);
-      return { success: false, error: error.message };
     }
-  };
 
-  // Send career confirmation
-  export const sendCareerConfirmation = async (application) => {
-    try {
-      if (process.env.EMAIL_DEV_MODE === 'true') {
-        logger.info(`[DEV] Email skipped`);
-        console.log(`📧 DEV MODE: Email not sent`);
-        return { success: true };
-      }
+    const transporter = createTransporter();
+    await transporter.sendMail({
+      from: process.env.EMAIL_FROM,
+      to: application.email,
+      subject: `Application Received - ${application.jobTitle}`,
+      html: `<p>Hi ${application.applicantName},</p><p>We received your application for <strong>${application.jobTitle}</strong>.</p><p>We'll review and get back within 5 business days.</p><p>Best regards,<br>Anvexs IT Hub</p>`,
+      text: `Application received for ${application.jobTitle}.`,
+    });
 
-      const transporter = createTransporter();
-      await transporter.sendMail({
-        from: process.env.EMAIL_FROM,
-        to: application.email,
-        subject: `Application Received - ${application.jobTitle}`,
-        html: `<p>Hi ${application.applicantName},</p><p>We received your application for <strong>${application.jobTitle}</strong>.</p><p>We'll review and get back within 5 business days.</p><p>Best regards,<br>Anvexs IT Hub</p>`,
-        text: `Application received for ${application.jobTitle}.`,
-      });
+    logger.info(`✅ Career confirmation sent to ${application.email}`);
+    console.log(`📧 Career email sent to ${application.email}`);
+    return { success: true };
+  } catch (error) {
+    logger.error(`❌ Career email failed: ${error.message}`);
+    console.error(`❌ Career Email Error:`, error.message);
+    return { success: false, error: error.message };
+  }
+};
 
-      logger.info(`✅ Career confirmation sent to ${application.email}`);
-      console.log(`📧 Career email sent to ${application.email}`);
-      return { success: true };
-    } catch (error) {
-      logger.error(`❌ Career email failed: ${error.message}`);
-      console.error(`❌ Career Email Error:`, error.message);
-      return { success: false, error: error.message };
-    }
-  };
-
-  export default { sendOTPEmail, sendEnquiryConfirmation, sendCareerConfirmation, verifyEmailConfig };
+export default { sendOTPEmail, sendEnquiryConfirmation, sendCareerConfirmation, verifyEmailConfig };
