@@ -12,6 +12,7 @@ import enquiryRoutes from './routes/enquiry.routes.js';
 import otpRoutes from './routes/otp.routes.js';
 import careerRoutes from './routes/career.routes.js';
 // import blogRoutes from './routes/blog.routes.js';
+import {verifyEmailConfig} from './services/email.service.js';
 
 
 dotenv.config();
@@ -56,6 +57,7 @@ const authLimiter = rateLimit({
   max: 10,
 });
 
+await verifyEmailConfig();
 app.use('/api/', limiter);
 app.use('/api/auth/', authLimiter);
 
