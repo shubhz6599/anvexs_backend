@@ -32,7 +32,10 @@ const userSchema = new mongoose.Schema(
     },
     isVerified: { type: Boolean, default: false },
     isActive: { type: Boolean, default: true },
-    profilePicture: { type: String, default: null },
+    profilePicture: {
+      url: String,
+      public_id: String
+    },
     lastLogin: { type: Date, default: null },
     loginAttempts: { type: Number, default: 0 },
     lockUntil: { type: Date, default: null },

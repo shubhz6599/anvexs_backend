@@ -91,7 +91,8 @@ export const getMe = async (req, res) => {
 export const updateProfile = async (req, res, next) => {
   try {
     const errors = validationResult(req);
-    if (!errors.isEmpty()) return res.status(400).json({ success: false, message: errors.array()[0].msg });
+    if (!errors.isEmpty())
+      return res.status(400).json({ success: false, message: errors.array()[0].msg });
 
     const { firstName, lastName, phone, removeProfilePicture } = req.body;
 
@@ -101,14 +102,43 @@ export const updateProfile = async (req, res, next) => {
     if (lastName !== undefined) updates.lastName = lastName.trim();
     if (phone !== undefined) updates.phone = phone.trim() || undefined;
 
-    // ✅ REMOVE PROFILE PICTURE
+    const user = await User.findById(req.user._id);
+
+    // ----------------------------
+    // GET OLD IMAGE SAFE
+    // ----------------------------
+    let oldPublicId = null;
+
+    if (user?.profilePicture) {
+      if (typeof user.profilePicture === 'string') {
+        // old system (URL only) → cannot delete from cloudinary
+        oldPublicId = null;
+      } else {
+        oldPublicId = user.profilePicture.public_id;
+      }
+    }
+
+    // ----------------------------
+    // REMOVE PROFILE PICTURE
+    // ----------------------------
     if (String(removeProfilePicture) === 'true') {
+      if (oldPublicId) {
+        await cloudinary.uploader.destroy(oldPublicId);
+      }
+
       updates.profilePicture = null;
     }
 
-    // ✅ UPLOAD PROFILE PICTURE (overrides remove if both sent)
+    // ----------------------------
+    // UPLOAD NEW IMAGE
+    // ----------------------------
     if (req.file) {
       configureCloudinary();
+
+      // delete old image first
+      if (oldPublicId) {
+        await cloudinary.uploader.destroy(oldPublicId);
+      }
 
       const uploadResult = await new Promise((resolve, reject) => {
         const stream = cloudinary.uploader.upload_stream(
@@ -119,18 +149,34 @@ export const updateProfile = async (req, res, next) => {
               { width: 400, height: 400, crop: 'fill', gravity: 'face' }
             ]
           },
-          (err, result) => err ? reject(err) : resolve(result)
+          (err, result) => (err ? reject(err) : resolve(result))
         );
 
         stream.end(req.file.buffer);
       });
 
-      updates.profilePicture = uploadResult.secure_url;
+      updates.profilePicture = {
+        url: uploadResult.secure_url,
+        public_id: uploadResult.public_id
+      };
     }
-    const user = await User.findByIdAndUpdate(req.user._id, updates, { new: true, runValidators: true });
-    logger.info(`Profile updated: ${user.email}`);
-    res.json({ success: true, message: 'Profile updated successfully.', data: { user: { _id: user._id, firstName: user.firstName, lastName: user.lastName, email: user.email, phone: user.phone, role: user.role, isVerified: user.isVerified, profilePicture: user.profilePicture } } });
-  } catch (error) { next(error); }
+
+    const updatedUser = await User.findByIdAndUpdate(
+      req.user._id,
+      updates,
+      { new: true, runValidators: true }
+    );
+
+    logger.info(`Profile updated: ${updatedUser.email}`);
+
+    res.json({
+      success: true,
+      message: 'Profile updated successfully.',
+      data: { user: updatedUser }
+    });
+  } catch (error) {
+    next(error);
+  }
 };
 
 // POST /api/auth/forgot-password
