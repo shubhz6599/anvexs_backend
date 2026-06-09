@@ -104,7 +104,7 @@ export const verifyOTP = async (req, res, next) => {
         message: 'Email verified! Welcome to Anvexs.',
         data: {
           verified: true, autoLogin: true,
-          user: { _id: user._id, firstName: user.firstName, lastName: user.lastName, email: user.email, role: user.role, isVerified: true },
+          user: { _id: user._id, firstName: user.firstName, phone: user.phone, lastName: user.lastName, email: user.email, role: user.role, isVerified: true },
           accessToken, refreshToken,
         },
       });
