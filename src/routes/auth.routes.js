@@ -4,6 +4,7 @@ import multer from 'multer';
 import { register, login, refreshToken, logout, getMe, updateProfile, forgotPassword, resetPassword, changePassword } from '../controllers/auth.controller.js';
 import { authenticate } from '../middleware/auth.middleware.js';
 import { createNewsletter, upload } from '../controllers/newsletter.controller.js';
+import { getAiChatResponse } from '../controllers/ai.controller.js';
 
 const router = Router();
 const avatarUpload = multer({ storage: multer.memoryStorage(), limits: { fileSize: 3 * 1024 * 1024 }, fileFilter: (req, file, cb) => /image\/(jpeg|png|webp|gif)/.test(file.mimetype) ? cb(null, true) : cb(new Error('Only images allowed')) });
@@ -45,5 +46,7 @@ router.post('/change-password', authenticate, [
 router.post('/newsletters', authenticate,
   upload.single('attachment'),
   createNewsletter);
+
+router.post('/chat', getAiChatResponse);
 
 export default router;
