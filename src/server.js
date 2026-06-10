@@ -13,6 +13,7 @@ import otpRoutes from './routes/otp.routes.js';
 import careerRoutes from './routes/career.routes.js';
 // import blogRoutes from './routes/blog.routes.js';
 import {verifyEmailConfig} from './services/email.service.js';
+import { startNewsletterScheduler } from './services/newsletterScheduler.service.js';
 
 
 dotenv.config();
@@ -120,6 +121,7 @@ const startServer = async () => {
       logger.info(`🚀 Anvexs API running on port ${PORT} [${process.env.NODE_ENV}]`);
       console.log(`✅ Server running on http://localhost:${PORT}`);
       console.log(`📚 API Documentation at http://localhost:${PORT}/`);
+      startNewsletterScheduler();
     });
   } catch (error) {
     console.error('❌ Failed to start server:', error.message);
