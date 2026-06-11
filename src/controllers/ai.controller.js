@@ -56,7 +56,7 @@ export const getAiChatResponse = async (req, res) => {
 
         return res.status(200).json({
             success: true,
-            answer:globalAnswer,
+            answer: globalAnswer,
         });
     } catch (err) {
         console.error('OPENROUTER ERROR:', err);

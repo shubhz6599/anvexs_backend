@@ -6,6 +6,11 @@ import { generateTokens } from '../middleware/auth.middleware.js';
 import { sendOTPEmail } from '../services/email.service.js';
 import { logger } from '../config/logger.js';
 import { v2 as cloudinary } from 'cloudinary';
+import { OAuth2Client } from 'google-auth-library';
+
+const googleClient = new OAuth2Client(
+  process.env.GOOGLE_CLIENT_ID
+);
 
 const configureCloudinary = () => {
   cloudinary.config({
@@ -238,4 +243,87 @@ export const changePassword = async (req, res, next) => {
     logger.info(`Password changed for: ${user.email}`);
     res.json({ success: true, message: 'Password changed successfully.' });
   } catch (error) { next(error); }
+};
+
+
+
+export const googleLogin = async (req, res, next) => {
+  try {
+
+    const { token } = req.body;
+
+    if (!token) {
+      return res.status(400).json({
+        success: false,
+        message: 'Google token required'
+      });
+    }
+
+    const ticket = await googleClient.verifyIdToken({
+      idToken: token,
+      audience: process.env.GOOGLE_CLIENT_ID
+    });
+
+    const payload = ticket.getPayload();
+
+    const {
+      sub,
+      email,
+      given_name,
+      family_name,
+      picture
+    } = payload;
+
+    let user = await User.findOne({
+      email: email.toLowerCase()
+    });
+
+    if (!user) {
+
+      user = await User.create({
+        firstName: given_name || '',
+        lastName: family_name || '',
+        email: email.toLowerCase(),
+        googleId: sub,
+        authProvider: 'google',
+        isVerified: true,
+        profilePicture: {
+          url: picture
+        }
+      });
+
+    } else {
+
+      if (!user.googleId) {
+        user.googleId = sub;
+        user.authProvider = 'google';
+      }
+
+      user.isVerified = true;
+
+      await user.save();
+    }
+
+    const { accessToken, refreshToken } =
+      generateTokens(user._id);
+
+    user.refreshToken = refreshToken;
+
+    await user.save({
+      validateBeforeSave: false
+    });
+
+    return res.json({
+      success: true,
+      message: 'Google login successful',
+      data: {
+        user,
+        accessToken,
+        refreshToken
+      }
+    });
+
+  } catch (err) {
+    next(err);
+  }
 };

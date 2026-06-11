@@ -1,7 +1,7 @@
 import { Router } from 'express';
 import { body } from 'express-validator';
 import multer from 'multer';
-import { register, login, refreshToken, logout, getMe, updateProfile, forgotPassword, resetPassword, changePassword } from '../controllers/auth.controller.js';
+import { register, login, refreshToken, logout, getMe, updateProfile, forgotPassword, resetPassword, changePassword, googleLogin } from '../controllers/auth.controller.js';
 import { authenticate } from '../middleware/auth.middleware.js';
 import { createNewsletter, upload } from '../controllers/newsletter.controller.js';
 import { getAiChatResponse } from '../controllers/ai.controller.js';
@@ -21,6 +21,7 @@ router.post('/login', [
   body('email').isEmail().normalizeEmail().withMessage('Valid email is required'),
   body('password').notEmpty().withMessage('Password is required'),
 ], login);
+router.post('/google', googleLogin);
 
 router.post('/refresh', refreshToken);
 router.post('/logout', authenticate, logout);
