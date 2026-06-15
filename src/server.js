@@ -25,11 +25,7 @@ const PORT = process.env.PORT || 5000;
 // ── Security Middleware ──────────────────────
 app.use(helmet({ contentSecurityPolicy: false, crossOriginEmbedderPolicy: false }));
 
-const allowedOrigins = [
-  'http://localhost:4200',
-  'https://anvexs.com',
-  'https://www.anvexs.com'
-];
+const allowedOrigins =process.env.ALLOWED_ORIGINS
 
 app.use(cors({
   origin: function (origin, callback) {
