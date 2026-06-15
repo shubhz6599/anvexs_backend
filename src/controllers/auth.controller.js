@@ -128,6 +128,7 @@ export const updateProfile = async (req, res, next) => {
     // ----------------------------
     if (String(removeProfilePicture) === 'true') {
       if (oldPublicId) {
+        configureCloudinary()
         await cloudinary.uploader.destroy(oldPublicId);
       }
 
